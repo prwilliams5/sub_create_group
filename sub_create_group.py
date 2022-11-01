@@ -6,7 +6,11 @@ TOKEN = Cypher(morpheus=morpheus, ssl_verify=False).get('secret/pw_api_key:api_k
 SERVER_URL = "cloudkey.corp.gipnetworks.com"
 URL = f'https://{SERVER_URL}/api/groups'
 HEADERS = {"Authorization": f'BEARER {TOKEN}', "Content-Type": "application/json"}
-GROUP_NAME = morpheus['customOptions']['subgroupname']
+
+try:
+    GROUP_NAME = morpheus['customOptions']['subgroupname']
+except KeyError:
+    GROUP_NAME = None
 
 try:
     GROUP_CODE = morpheus['customOptions']['subgroupcode']
