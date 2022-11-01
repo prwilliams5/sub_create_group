@@ -1,7 +1,7 @@
 import requests
 from morpheuscypher import Cypher
 
-TOKEN = Cypher(morpheus=morpheus).get('secret/pw_api_key')
+TOKEN = Cypher(morpheus=morpheus, ssl_verify=False).get('secret/pw_api_key:api_key')
 
 SERVER_URL = "cloudkey.corp.gipnetworks.com"
 URL = f'https://{SERVER_URL}/api/groups'
