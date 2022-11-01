@@ -1,8 +1,9 @@
 import requests
-import sys
+from morpheuscypher import Cypher
+
+TOKEN = Cypher(morpheus=morpheus).get('secret/pw_api_key')
 
 SERVER_URL = "cloudkey.corp.gipnetworks.com"
-TOKEN = sys.argv[1]
 URL = f'https://{SERVER_URL}/api/groups'
 HEADERS = {"Authorization": f'BEARER {TOKEN}', "Content-Type": "application/json"}
 GROUP_NAME = morpheus['customOptions']['subgroupname']
