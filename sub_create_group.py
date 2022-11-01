@@ -4,7 +4,7 @@ from morpheuscypher import Cypher
 TOKEN = Cypher(morpheus=morpheus, ssl_verify=False).get('secret/pw_api_key:api_key')
 
 SERVER_URL = "cloudkey.corp.gipnetworks.com"
-URL = f'https://{SERVER_URL}/api/groups'
+URL = f'https://{SERVER_URL}/api/accounts/9/groups'
 HEADERS = {"Authorization": f'BEARER {TOKEN}', "Content-Type": "application/json"}
 
 try:
