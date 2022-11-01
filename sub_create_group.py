@@ -1,7 +1,7 @@
 import requests
 import sys
 
-SERVER_URL = "10.0.1.21"
+SERVER_URL = "cloudkey.corp.gipnetworks.com"
 TOKEN = sys.argv[1]
 URL = f'https://{SERVER_URL}/api/groups'
 HEADERS = {"Authorization": f'BEARER {TOKEN}', "Content-Type": "application/json"}
